@@ -44,9 +44,32 @@ Assumes you have ESLint installed (dbaeumer.vscode-eslint) and have NOT installe
   // END Lint
 ```
 
+## ✂️ Code Snippets
+
 ## 🧩 Extensions
 
-## ✂️ JavaScript Snippets
+* Better Comments: highlights TODO items and other special comments
+* CloudFormation Linter
+* Code Spell Checker
+* ESLint
+* Git Lens
+* Jest: shows results of tests right in the editor
+* Markdown Lint
+* multi-command
+* Toggle Quotes
+* Vue VS Code Extension Pack
+
+### Code Snippet Extensions
+
+* eslint-disable-snippets
+* JavaScript (ES6) code snippets
+* Jest Snippets
+* Vue VSCode Snippets
+
+### Themes
+
+* Cobalt2
+* Material Icon Theme
 
 ## ⌨️ Keyboard Shortcuts
 
