@@ -1,0 +1,380 @@
+{
+	//
+	//
+	// AWS
+	//
+	"AWS API Event": {
+		"prefix": "apiev",
+		"body": "{\n  path: \"/v1/things\",\n  httpMethod: HTTP.METHOD.POST,\n  queryStringParameters: {},\n  pathParameters: {},\n  headers: {},\n  isBase64Encoded: false,\n  body: JSON.stringify({})\n}"
+	},
+	"Response from Handler (Await)": {
+		"prefix": "resp",
+		"body": "const response = await ${1:handler}(event);"
+	},
+	"Await Response from Handler": {
+		"prefix": "aresp",
+		"body": "const response = await ${1:handler}(event);"
+	},
+	"New Handler": {
+		"prefix": "handler",
+		"body": "import { HTTP } from \"@cardx/common\";\nimport handler, { log } from \"@cardx/lambda-handler\";\n\n//\n//\n// Constants\n//\n\n//\n//\n// Helper Functions\n//\n\n//\n//\n// Handler\n//\n\nexport default handler(\"MyHandler\", async event => {\n  log.trace(\"Using trace mode in handler\");\n\n  return {\n    statusCode: HTTP.CODE.OK,\n    body: JSON.stringify(event)\n  };\n});\n"
+	},
+	"Parse Response Body": {
+		"prefix": "presp",
+		"body": "const result = JSON.parse(response.body);"
+	},
+	//
+	//
+	// CardX
+	//
+	"import HTTP": {
+		"prefix": "imhttp",
+		"body": "import { HTTP } from \"@cardx/common\";"
+	},
+	"require HTTP": {
+		"prefix": "reqhttp",
+		"body": "const { HTTP } = require(\"@cardx/common\");"
+	},
+	"HTTP Status Code 200": {
+		"prefix": "http200",
+		"body": "HTTP.CODE.OK"
+	},
+	"HTTP Status Code 400": {
+		"prefix": "http400",
+		"body": "HTTP.CODE.BAD_REQUEST"
+	},
+	"HTTP Status Code 500": {
+		"prefix": "http500",
+		"body": "HTTP.CODE.INTERNAL_ERROR"
+	},
+	"Expect 200": {
+		"prefix": "ex200",
+		"body": "expect(response.statusCode).toBe(HTTP.CODE.OK);"
+	},
+	"Expect 400": {
+		"prefix": "ex400",
+		"body": "expect(response.statusCode).toBe(HTTP.CODE.BAD_REQUEST);"
+	},
+	"Expect 500": {
+		"prefix": "ex500",
+		"body": "expect(response.statusCode).toBe(HTTP.CODE.INTERNAL_ERROR);"
+	},
+	"Require Mock Logger": {
+		"prefix": "reqmlog",
+		"body": "const mockLogger = require(\"@cardx/mock-logger\");"
+	},
+	"Require Lambda Logger": {
+		"prefix": "reqllog",
+		"body": "const { log } = require(\"@cardx/lambda-handler\");"
+	},
+	"Mock Logger Spy": {
+		"prefix": "mlspy",
+		"body": "mockLogger.spy(log);"
+	},
+	"Mock Logger Restore": {
+		"prefix": "mlrestore",
+		"body": "mockLogger.restore();"
+	},
+	//
+	//
+	// CardX: Logging
+	//
+	"log.trace": {
+		"prefix": "trace",
+		"body": "log.trace(\"${1}\");"
+	},
+	"log.var": {
+		"prefix": "var",
+		"body": "log.var({ ${1} });"
+	},
+	//
+	//
+	// Classes
+	//
+	"Private Variable Create/Set": {
+		"prefix": "privset",
+		"body": "this.private = new WeakMap();\nthis.private.set(this, { ${1} });"
+	},
+	"Private Variable Get": {
+		"prefix": "privget",
+		"body": "const { ${1} } = this.private.get(this);"
+	},
+	//
+	//
+	// Code Shorts
+	//
+	"else": {
+		"prefix": "else",
+		"body": "else {\r\t${1://}\r}"
+	},
+	"First call": {
+		"prefix": "firstcall",
+		"body": "const firstCall = axios.mock.calls[0];"
+	},
+	"First call (fcall)": {
+		"prefix": "fcall",
+		"body": "const firstCall = axios.mock.calls[0];"
+	},
+	"First call parameter": {
+		"prefix": "firstparam",
+		"body": "const firstParam = axios.mock.calls[0][0];"
+	},
+	"First call parameter (fparam)": {
+		"prefix": "fparam",
+		"body": "const firstParam = axios.mock.calls[0][0];"
+	},
+	"for": {
+		"prefix": "for",
+		"body": "for (let i = 0; i < ${1:array}.length; i += 1) {\n  const ${2:element} = ${1:array}[i];\n  ${3://}\n}"
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if (${1}) {\r\t${2://}\r}"
+	},
+	"if typeof": {
+		"prefix": "iftype",
+		"body": "if (typeof ${1} === \"${2:object}\") {\r\t${3://}\r}"
+	},
+	"if typeof object": {
+		"prefix": "iftyobj",
+		"body": "if (typeof ${1} === \"object\") {\r\t${2://}\r}"
+	},
+	"if typeof string": {
+		"prefix": "iftystr",
+		"body": "if (typeof ${1} === \"string\") {\r\t${2://}\r}"
+	},
+	"if/else": {
+		"prefix": "ife",
+		"body": "if (${1}) {\r\t${2://}\r} else {\r\t${3://}\r}"
+	},
+	"JSON.parse": {
+		"prefix": "jsparse",
+		"body": "JSON.stringify(${1})"
+	},
+	"JSON.stringify": {
+		"prefix": "jsstring",
+		"body": "JSON.stringify(${1})"
+	},
+	//
+	//
+	// Console Log
+	//
+	"consoleLogObject": {
+    "prefix": "clo",
+    "body": "console.log(\"${1:object} :>> \", ${1:object});",
+    "description": "Displays an object in the console with its name"
+  },
+	"Log body": {
+		"prefix": "clbody",
+		"body": "console.log(\"body :>> \", body);"
+	},
+	"Log error": {
+		"prefix": "cler",
+		"body": "console.log(\"error :>> \", error);"
+	},
+	"Log event": {
+		"prefix": "clev",
+		"body": "console.log(\"event :>> \", event);"
+	},
+	"Log hi": {
+		"prefix": "clhi",
+		"body": "console.log(\"${1:Hi.}\");"
+	},
+	"Log response": {
+		"prefix": "clresp",
+		"body": "console.log(\"response :>> \", response);"
+	},
+	"Log result": {
+		"prefix": "clresult",
+		"body": "console.log(\"result :>> \", result);"
+	},
+	//
+	//
+	// dotenv
+	//
+	"dotenv require": {
+		"prefix": "dotenv",
+		"body": "require(\"dotenv\").config();"
+	},
+	//
+	//
+	// ES6
+	//
+	"anonymousFunction": {
+    "prefix": "anfn",
+    "body": "() => {\n\t//${1}\n}",
+    "description": "Creates an anonymous function in ES6 syntax"
+  },
+	"asyncAnonymousFunction": {
+		"prefix": "aafn",
+		"body": "async () => {\n\t//${1}\n}",
+		"description": "Creates an async anonymous function in ES6 syntax"
+	},
+	// filter, map, reduce from capaj/vscode-standardjs-snippets
+	"filter": {
+		"prefix": "filter",
+		"body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})"
+	},
+	// "Main" function expressed as an aafn
+	"Main Function": {
+		"prefix": "main",
+		"body": "(async () => {\n  //${1}\n})();\n\n"
+	},
+	"map": {
+		"prefix": "map",
+		"body": "${1:iterable}.map((${2:item}) => {\n\t${0}\n})"
+	},
+	"reduce": {
+		"prefix": "reduce",
+		"body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})"
+	},
+	// Accumulate, a specific form of reduce
+	"accumulate": {
+		"prefix": "accumulate",
+		"body": "${1:iterable}.reduce((${2:accumulator}, ${3:current}) => {\n\t${0}\n\treturn ${2:accumulator};\n}, ${4});"
+	},
+	//
+	//
+	// Handlebars
+	//
+	"Handlebars import": {
+		"prefix": "hbimport",
+		"body": "import Handlebars from \"handlebars\";"
+	},
+	"Handlebars require": {
+		"prefix": "hbrequire",
+		"body": "const Handlebars = require(\"handlebars\");"
+	},
+	"Handlebars function": {
+		"prefix": "hbfunction",
+		"body": "const result = Handlebars.compile(templateString)(keyValuesObject);"
+	},
+	"Handlebars template": {
+		"prefix": "hbtemplate",
+		"body": "const template = Handlebars.compile(templateString);"
+	},
+	"Handlebars result": {
+		"prefix": "hbresult",
+		"body": "const result = template(keyValuesObject);"
+	},
+	//
+	//
+	// Jest
+	//
+	"expectExceptions": {
+		"prefix": "exex",
+		"body": "try {\n\t//${2}\n} catch (error) {\n\texpect(error.isJsonApiHttpError).toBeTrue();\n\texpect(error.status).toBe(HTTP.CODE.${1:INTERNAL_ERROR});\n}\nexpect.assertions(2);"
+	},
+	"jestEnvironment": {
+		"prefix": "jenv",
+		"body": "const DEFAULT_ENV = process.env;\nbeforeEach(() => {\n  process.env = { ...process.env };\n});\nafterEach(() => {\n  process.env = DEFAULT_ENV;\n});"
+	},
+	"Jest spec outline": {
+		"prefix": "spec",
+		"body": "const ${1:XXXXXX} = require(\"../${1:XXXXXX}\");\n\n//\n//\n// Mock constants\n//\n\nconst MOCK = {\n  //\n};\n\n//\n//\n// Mock modules\n//\n\n//\n//\n// Mock environment\n//\n\nconst DEFAULT_ENV = process.env;\nbeforeEach(() => {\n  process.env = { ...process.env };\n});\nafterEach(() => {\n  process.env = DEFAULT_ENV;\n});\n\n//\n//\n// Run tests\n//\n\ndescribe(\"The module\", () => {\n  describe(\"${1:XXXXXX}\", () => {\n    it(\"Works\", () => {\n      //\n    });\n  });\n});\n"
+	},
+	"Jest function spec": {
+		"prefix": "fspec",
+		"body": "const ${1:XXXXXX} = require(\"../${1:XXXXXX}\");\n\n//\n//\n// Run tests\n//\n\ndescribe(\"Function\", () => {\n  describe(\"${1:XXXXXX}\", () => {\n    it(\"Is a function\", () => {\n      expect(${1:XXXXXX}).toBeFunction();\n    });\n    it(\"Works\", () => {\n      const result = ${1:XXXXXX}();\n      const expected = undefined;\n      expect(result).toBe(expected);\n    });\n  });\n});\n"
+	},
+	"Mock with implementation": {
+		"prefix": "mocki",
+		"body": "jest.mock(\"${1}\", () => {\n  return {\n    //${2}\n  };\n});"
+	},
+	"Jest mock clear": {
+		"prefix": "jmcl",
+		"body": "jest.clearAllMocks();"
+	},
+	"Clear mocks": {
+		"prefix": "clmocks",
+		"body": "jest.clearAllMocks();"
+	},
+	"Clear mocks (Verbose)": {
+		"prefix": "clearmocks",
+		"body": "jest.clearAllMocks();"
+	},
+	"Reset Modules": {
+		"prefix": "jreset",
+		"body": "jest.resetModules();"
+	},
+	"Jest mock function": {
+		"prefix": "jfn",
+		"body": "const mock${1:Function} = jest.fn();"
+	},
+	"Jest mock function with implementation": {
+		"prefix": "jfni",
+		"body": "const mock${1:Function} = jest.fn(() => {\n  return {\n    ${2://}\n  };\n});"
+	},
+	"Jest mock function with response": {
+		"prefix": "jresp",
+		"body": "const mock${2:Function} = jest.fn();\nlet mock${2:Function}Response;\njest.mock(\"${1:function}\", () => ({\n  default: (${3:...params}) => {\n    mock${2:Function}(${3:...params});\n    return mock${2:Function}Response;\n  },\n}));\n\nbeforeEach(() => {\n  // mock${2:Function}Response = cloneDeep(MOCK.RESPONSE);\n});\nafterEach(() => {\n  jest.clearAllMocks();\n});"
+	},
+	"Jest requireActual": {
+		"prefix": "jactual",
+		"body": "...jest.requireActual(\"${1}\"),"
+	},
+	"It": {
+		"prefix": "it",
+		"body": "it(\"${1:Should }\", () => {\n  ${2://}\n});"
+	},
+	"It Only": {
+		"prefix": "ito",
+		"body": "it.only(\"${1:Should }\", () => {\n  ${2://}\n});"
+	},
+	"It Only Async": {
+		"prefix": "itoa",
+		"body": "it.only(\"${1:Should }\", async () => {\n  ${2://}\n});"
+	},
+	"It Works": {
+		"prefix": "itw",
+		"body": "it(\"Works\", () => {\n  ${2://}\n});"
+	},
+	//
+	//
+	// Lodash
+	//
+	"clone": {
+		"prefix": "_clone",
+		"body": "const clone = require(\"lodash.clone\");"
+	},
+	"cloneDeep": {
+		"prefix": "_cloneDeep",
+		"body": "const cloneDeep = require(\"lodash.clonedeep\");"
+	},
+	//
+	//
+	// Adam-ism
+	//
+	"Class": {
+		"prefix": "class",
+		"body": "//\n//\n// Class Definition\n//\n\nclass ${1:XXXXXX} {\n  constructor() {\n    this.private = new WeakMap();\n    this.private.set(this, {});\n  }\n}\n\n//\n//\n// Export\n//\n\nmodule.exports = ${1:XXXXXX};\n"
+	},
+	"Comment block": {
+		"prefix": "cccc",
+		"body": "//\n//\n// ${1}\n//\n"
+	},
+	"Function File": {
+		"prefix": "func",
+		"body": "//\n//\n// Function Definition\n//\n\nfunction ${1:XXXXXX}() {\n  //${2}\n}\n\n//\n//\n// Export\n//\n\nmodule.exports = ${1:XXXXXX};\n"
+	},
+	"Function blocks": {
+		"prefix": "block",
+		"body": "//\n//\n// Validate\n//\n\n//\n//\n// Setup\n//\n\n//\n//\n// Preprocess\n//\n\n//\n//\n// Process\n//\n\n//\n//\n// Postprocess\n//\n\n//\n//\n// Return\n//\n\nreturn;"
+	},
+	"Require Local": {
+		"prefix": "req.",
+		"body": "require(\"./${1}\");"
+	},
+	"Require Above": {
+		"prefix": "req..",
+		"body": "require(\"../${1}\");"
+	},
+	"Require Top": {
+		"prefix": "req...",
+		"body": "require(\"../../${1}\");"
+	},
+	"Sleep": {
+		"prefix": "sleep",
+		"body": "await new Promise(r => setTimeout(r, 2000));"
+	}
+}

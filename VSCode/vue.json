@@ -1,0 +1,20 @@
+{
+	//
+	//
+	// Vue
+	//
+	"vue script tag": {
+		"prefix": "vscript",
+		"body": "<script>\nexport default {\n  name: \"${1}\",\n\n  components: {}, // from imports\n  computed: {}, // key: function() {}\n  data: () => ({}),\n  methods: {},\n  props: {}, // key: type (String)\n  watch: {}, // key: function() {}\n};\n</script>"
+	},
+
+	//
+	//
+	// JavaScript
+	//
+	"for": {
+		"prefix": "for",
+		"body": "for (let i = 0; i < ${1:array}.length; i += 1) {\n  const ${2:element} = ${1:array}[i];\n  ${3://}\n}"
+	},
+
+}

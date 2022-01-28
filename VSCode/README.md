@@ -46,6 +46,9 @@ Assumes you have ESLint installed (dbaeumer.vscode-eslint) and have NOT installe
 
 ## ✂️ Code Snippets
 
+* [javascript.json](javascript.json)
+* [vue.json](vue.json)
+
 ## 🧩 Extensions
 
 * Better Comments: highlights TODO items and other special comments
