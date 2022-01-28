@@ -6,7 +6,15 @@ Settings I use
 
 * Alfred
 * [.gitignore](.gitignore)
-* VSCode
+* [VSCode](VSCode/README.md)
+  * General
+    * Linting
+  * Extensions
+  * JavaScript Snippets
+  * Keyboard Shortcuts
+    * Testing Workflow
+  * Multi-command
+  * Tasks
 
 ## 📜 License
 

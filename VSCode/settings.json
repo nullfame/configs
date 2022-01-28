@@ -1,0 +1,133 @@
+{
+  // Adam's VSCode settings on Wolverine 1.0
+  //
+  // Multi-commands:
+  "multiCommand.commands": [
+    {
+        "command": "multiCommand.terminalDown",
+        "sequence": [
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown"
+        ]
+    },
+    {
+        "command": "multiCommand.terminalUp",
+        "sequence": [
+            "workbench.action.terminal.resizePaneUp",
+            "workbench.action.terminal.resizePaneUp"
+        ]
+    },
+    {
+        "command": "multiCommand.terminalReset",
+        "sequence": [
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneUp"
+        ]
+    },
+    {
+        "command": "multiCommand.npmRestart",
+        "sequence": [
+            "workbench.action.terminal.kill",
+            {"command": "workbench.action.tasks.runTask", "args": "runStart"}
+        ]
+    },
+  ],
+  //
+  //
+  // ESLint and code style preferences:
+  //
+  // Allow formatting on save
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[vue]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // Personal preferences:
+  // "editor.formatOnType": false,
+  // "editor.formatOnPaste": false,
+  "javascript.validate.enable": false,
+  //
+  // Tab size:
+  "editor.tabSize": 2,
+  //
+  // Markdown Lint:
+  "markdownlint.config": {
+    "default": true,
+    "MD007": false,
+    "MD024": false,
+    "MD036": false
+  },
+  // END Lint
+  //
+  //
+  // Auto-saving and file management:
+  //
+  // Auto save:
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5000,
+  //
+  // File opening and display details:
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "breadcrumbs.enabled": true,
+  "explorer.openEditors.visible": 0,
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+  // END Auto-save and file management
+  //
+  //
+  // Visual:
+  //
+  // Theme and icons:
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.colorCustomizations": {
+    "editorGutter.modifiedBackground": "#0e7d9e",
+    "gitDecoration.ignoredResourceForeground": "#808080",
+  },
+  "editor.tokenColorCustomizations": {
+    "[Cobalt2]": {
+        "comments": "#77bbff"
+    }
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.statusBar.feedback.visible": false,
+  //
+  // Font:
+  "editor.fontSize": 14,
+  "editor.fontFamily": "MonoLisa, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  //
+  // Minimap:
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.maxColumn": 200,
+  "editor.minimap.showSlider": "always",
+  //
+  // Cursor:
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": true,
+  //
+  // Brackets:
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs":"active",
+  //
+  // Misc:
+  "editor.smoothScrolling": true,
+  "vetur.grammar.customBlocks": {
+    "page-query": "graphql",
+    "static-query": "graphql"
+  },
+  // END Visual
+  //
+  //
+  // EOF (anything after this was automatically appended)
+}

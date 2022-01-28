@@ -1,0 +1,142 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+shift+cmd+up",
+    "command": "bracket-pair-colorizer.expandBracketSelection"
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "!jest\u000D"
+    }
+  },
+  {
+    "key": "cmd+k tab",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "cmd+k tab",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  // Choose a task to run:
+  {
+    "key": "shift+cmd+enter",
+    "command": "workbench.action.tasks.runTask"
+  },
+  // Re-run the last task
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.tasks.reRunTask"
+  },
+  {
+    "key": "cmd+k a",
+    "command": "git.stageAll"
+  },
+  {
+    "key": "cmd+k d",
+    "command": "-workbench.files.action.compareWithSaved"
+  },
+  {
+    "key": "cmd+k p",
+    "command": "workbench.action.tasks.runTask",
+    "args": "openPackageJson"
+  },
+  {
+    "key": "cmd+k s",
+    "command": "-workbench.action.files.saveWithoutFormatting"
+  },
+  {
+    "key": "cmd+k s",
+    "command": "git.stage"
+  },
+  {
+    "key": "cmd+k c",
+    "command": "git.commitStaged"
+  },
+  {
+    "key": "cmd+k c",
+    "command": "-workbench.files.action.compareWithClipboard"
+  },
+  {
+    "key": "cmd+k down",
+    "command": "extension.multiCommand.execute",
+    "args": { "command": "multiCommand.terminalDown" }
+  },
+  {
+    "key": "cmd+k up",
+    "command": "extension.multiCommand.execute",
+    "args": { "command": "multiCommand.terminalUp" }
+  },
+  {
+    "key": "cmd+k right",
+    "command": "workbench.action.terminal.resizePaneUp"
+  },
+  {
+    "key": "cmd+k left",
+    "command": "workbench.action.terminal.resizePaneDown"
+  },
+  {
+    "key": "cmd+k /",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+k shift+.",
+    "command": "extension.multiCommand.execute",
+    "args": { "command": "multiCommand.terminalReset" }
+  },
+  {
+    "key": "cmd+k shift+/",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "cmd+k l",
+    "command": "workbench.action.tasks.runTask",
+    "args": "runEslint"
+  },
+  {
+    "key": "cmd+k t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "runJest"
+  },
+  {
+    "key": "cmd+k backspace",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "cmd+k n",
+    "command": "workbench.action.tasks.runTask",
+    "args": "runStart"
+  },{
+    "key": "cmd+k r",
+    "command": "extension.multiCommand.execute",
+    "args": { "command": "multiCommand.npmRestart" }
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.debug.restart",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "shift+cmd+f5",
+    "command": "-workbench.action.debug.restart",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "cmd+k '",
+    "command": "editor.togglequotes"
+  },
+  {
+    "key": "cmd+'",
+    "command": "-editor.togglequotes"
+  }
+]

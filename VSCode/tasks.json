@@ -1,0 +1,31 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "openPackageJson",
+      "type": "shell",
+      "command": "code package.json",
+      "problemMatcher": []
+    },
+    {
+      "label": "runEslint",
+      "type": "shell",
+      "command": "npm run lint",
+      "problemMatcher": []
+    },
+    {
+      "label": "runJest",
+      "type": "shell",
+      "command": "npm run test",
+      "problemMatcher": []
+    },
+    {
+      "label": "runStart",
+      "type": "shell",
+      "command": "npm run start",
+      "problemMatcher": []
+    }
+  ],
+}
