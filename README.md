@@ -6,7 +6,7 @@ Settings I use
 
 * Alfred
 * [.gitignore](.gitignore)
-* [VSCode](VSCode/README.md)
+* [VSCode](VSCode/)
   * General
     * Linting
   * Extensions
