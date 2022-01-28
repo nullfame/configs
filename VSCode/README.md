@@ -10,7 +10,7 @@ If there's one thing you can do it is automatically apply linting.
 
 Assumes you have ESLint installed (dbaeumer.vscode-eslint) and have NOT installed Prettier (let ESLint do this).
 
-``` json
+``` javascript
   //
   //
   // ESLint and code style preferences:
@@ -63,7 +63,7 @@ If there's a second thing you can do it is develop a strong testing workflow:
 
 Bonus: Install the Jest extension (orta.vscode-jest)
 
-``` json
+``` javascript
   // Choose a task to run:
   {
     "key": "shift+cmd+enter",
